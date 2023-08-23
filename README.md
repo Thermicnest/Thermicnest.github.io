@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        Lah
+        Flappy Bird Test WebGL Unity
     </head>
     <body>
         <h1>test</h1>
