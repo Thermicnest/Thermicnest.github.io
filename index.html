@@ -3,28 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Birddd?</title>
+  <title>Birddd</title>
   <style>
     body {
       margin: 0;
       overflow: hidden;
-      display: fixed;
+      display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: white; /* Mengubah latar belakang menjadi putih */
+      background-color: white;
     }
     #unityContainer {
       width: 720px;
       height: 1280px;
     }
+    #fullscreenButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
   </style>
   <script src="Build/UnityLoader.js"></script>
   <script>
-    UnityLoader.instantiate("unityContainer", "Build/BirddWEB.json");
+    window.onload = function() {
+      UnityLoader.instantiate("unityContainer", "Build/BirddWEB.json");
+    };
+
+    function toggleFullscreen() {
+      const unityContainer = document.getElementById("unityContainer");
+      if (unityContainer.requestFullscreen) {
+        unityContainer.requestFullscreen();
+      } else if (unityContainer.mozRequestFullScreen) {
+        unityContainer.mozRequestFullScreen();
+      } else if (unityContainer.webkitRequestFullscreen) {
+        unityContainer.webkitRequestFullscreen();
+      } else if (unityContainer.msRequestFullscreen) {
+        unityContainer.msRequestFullscreen();
+      }
+    }
   </script>
 </head>
 <body>
+  <button id="fullscreenButton" onclick="toggleFullscreen()">Fullscreen</button>
   <div id="unityContainer"></div>
 </body>
 </html>
