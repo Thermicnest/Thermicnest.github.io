@@ -8,16 +8,15 @@
     body {
       margin: 0;
       overflow: hidden;
-      display: flex;
-      flex-direction: column; /* Menyusun elemen secara vertikal */
-      justify-content: center; /* Menyusun elemen di tengah vertikal */
+      display: fixed;
+      align-items: center;
+      justify-content: center;
       height: 100vh;
-      background-color: white;
+      background-color: white; /* Mengubah latar belakang menjadi putih */
     }
     #unityContainer {
-      width: calc(100vh * 9 / 16); /* Lebar sesuai rasio 9:16 */
-      height: 100vh; /* Tinggi tetap 100% */
-      margin: 0 auto; /* Mengatur margin atas dan bawah menjadi 0 dan margin kiri-kanan menjadi otomatis */
+      width: 720px;
+      height: 1280px;
     }
   </style>
   <script src="Build/UnityLoader.js"></script>
