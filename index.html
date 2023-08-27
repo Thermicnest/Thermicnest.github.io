@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
   <meta charset="utf-8">
@@ -9,14 +9,15 @@
       margin: 0;
       overflow: hidden;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column; /* Menyusun elemen secara vertikal */
+      justify-content: center; /* Menyusun elemen di tengah vertikal */
       height: 100vh;
-      background-color: white; /* Mengubah latar belakang menjadi putih */
+      background-color: white;
     }
     #unityContainer {
-      width: 720px;
-      height: 1280px;
+      width: calc(100vh * 9 / 16); /* Lebar sesuai rasio 9:16 */
+      height: 100vh; /* Tinggi tetap 100% */
+      margin: 0 auto; /* Mengatur margin atas dan bawah menjadi 0 dan margin kiri-kanan menjadi otomatis */
     }
   </style>
   <script src="Build/UnityLoader.js"></script>
