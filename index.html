@@ -1,57 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Birddd</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: white;
-    }
-    #unityContainer {
-      width: 720px;
-      height: 1280px;
-    }
-    #fullscreenButton {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 15px 20px;
-      background-color: #333;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-    }
-  </style>
-  <script src="Build/UnityLoader.js"></script>
-  <script>
-    window.onload = function() {
-      UnityLoader.instantiate("unityContainer", "Build/BirddWEB.json");
-    };
-
-    function toggleFullscreen() {
-      const unityContainer = document.getElementById("unityContainer");
-      if (unityContainer.requestFullscreen) {
-        unityContainer.requestFullscreen();
-      } else if (unityContainer.mozRequestFullScreen) {
-        unityContainer.mozRequestFullScreen();
-      } else if (unityContainer.webkitRequestFullscreen) {
-        unityContainer.webkitRequestFullscreen();
-      } else if (unityContainer.msRequestFullscreen) {
-        unityContainer.msRequestFullscreen();
-      }
-    }
-  </script>
-</head>
-<body>
-  <button id="fullscreenButton" onclick="toggleFullscreen()">Fullscreen</button>
-  <div id="unityContainer"></div>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Birddd?</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/BirddWEB.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 720px; height: 1280px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Birddd?</div>
+      </div>
+    </div>
+  </body>
 </html>
