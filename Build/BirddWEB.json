@@ -1,7 +1,7 @@
 {
 "companyName": "Micro",
 "productName": "Birddd?",
-"productVersion": "1.4",
+"productVersion": "2.2",
 "dataUrl": "BirddWEB.data.unityweb",
 "wasmCodeUrl": "BirddWEB.wasm.code.unityweb",
 "wasmFrameworkUrl": "BirddWEB.wasm.framework.unityweb",
